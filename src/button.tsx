@@ -11,6 +11,12 @@ interface Props {
   width: string;
 }
 
+/**
+ *  Challenge:
+ *
+ *  Implement a new button event and create the unit test according to AAA pattern
+ *  and provide the correspoing describe blocks to increse the readability.
+ */
 const Button: React.FC<Props> = ({
   border,
   color,
