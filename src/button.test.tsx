@@ -44,8 +44,9 @@ describe('Button', () => {
           Click Me
         </Button>
       );
+      const clickButton = screen.getByText(/click me/i);
       // Action
-      fireEvent.click(screen.getByText(/click me/i));
+      fireEvent.click(clickButton);
       // Assert
       expect(handleClick).toHaveBeenCalledTimes(1);
     });
@@ -65,11 +66,12 @@ describe('Button', () => {
           width="200px"
           onDoubleClick={handleClick}
         >
-          Click Me
+          Double Click Me
         </Button>
       );
+      const doubleClickButton = screen.getByText(/double click me/i);
       // Action
-      fireEvent.doubleClick(screen.getByText(/click me/i));
+      fireEvent.doubleClick(doubleClickButton);
       // Assert
       expect(handleClick).toHaveBeenCalledTimes(1);
     });
