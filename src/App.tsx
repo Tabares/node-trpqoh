@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Button from './button';
 
 function App() {
   return (
@@ -19,6 +20,16 @@ function App() {
           Learn React
         </a>
       </header>
+      <Button
+        border="none"
+        color="green"
+        height="100px"
+        radius="10%"
+        width="200px"
+        onClick={() => console.log('Click on button')}
+      >
+        Click Me
+      </Button>
     </div>
   );
 }
