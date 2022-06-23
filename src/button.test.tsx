@@ -9,6 +9,11 @@ describe('Button', () => {
     test('calls function prop', () => {
       /**
        * Learning:
+       *
+       *  ByText
+       *  getByText, queryByText, getAllByText, queryAllByText, findByText, findAllByText
+       *  This will search for all elements that have a text node with textContent matching the given TextMatch.
+       *
        *  Mocks
        *  Jest's Mock functions can be used to test that a callback passed to the function was called, or what it was
        *  called when the event that should trigger the callback function does trigger the bound callback.
