@@ -22,8 +22,8 @@ function App() {
       </header>
       <Button
         border="none"
-        color="green"
-        height="100px"
+        color="cyan"
+        height="50px"
         radius="10%"
         width="200px"
         onClick={() => console.log('Click on button')}
