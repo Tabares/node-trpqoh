@@ -82,3 +82,22 @@ describe('Button', () => {
     });
   });
 });
+
+// Avoid code like this:
+test.skip('test statement', () => {
+  const handleClick = () => console.log('test my button');
+  render(
+    <Button
+      border="none"
+      color="green"
+      height="200px"
+      radius="50%"
+      width="200px"
+      onClick={handleClick}
+    >
+      Click Me
+    </Button>
+  );
+  fireEvent.click(screen.getByText(/click me/i));
+  expect(handleClick).toHaveBeenCalled();
+});
