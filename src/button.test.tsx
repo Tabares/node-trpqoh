@@ -84,8 +84,12 @@ describe('Button', () => {
 });
 
 // Avoid code like this:
-test.skip('test statement', () => {
+// The describe block is missing, lack of information and order
+// Poor Assert statement, is not describing what is going on, lack of story telling
+test.skip('test button', () => {
+  // Avoid use real functions in testing, use mocks or spys, unleast you are testing the function as main testing subject
   const handleClick = () => console.log('test my button');
+  const doubleHandleClick = () => console.log('test my button');
   render(
     <Button
       border="none"
@@ -94,10 +98,13 @@ test.skip('test statement', () => {
       radius="50%"
       width="200px"
       onClick={handleClick}
+      onDoubleClick={doubleHandleClick}
     >
       Click Me
     </Button>
-  );
+  ); // Provide a const for more readability, the getByText is part of the arrange, remove logic from Act, also avoid duplications on the same instance
   fireEvent.click(screen.getByText(/click me/i));
-  expect(handleClick).toHaveBeenCalled();
+  fireEvent.doubleClick(screen.getByText(/click me/i)); // You should provide another test block to test this event, otherwise the meaning of the test is ambiguous and the acts are overlapping
+  expect(handleClick).toHaveBeenCalled(); // Add break lines in order to clarify the AAA pattern
+  expect(doubleHandleClick).toHaveBeenCalled();
 });
